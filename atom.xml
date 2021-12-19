@@ -3,11 +3,11 @@
   <title>Lee&#39;s Blog</title>
   
   <subtitle>Study Notes</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://leee9.cn/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2021-12-19T14:40:41.424Z</updated>
-  <id>http://example.com/</id>
+  <link href="http://leee9.cn/"/>
+  <updated>2021-12-19T18:22:46.593Z</updated>
+  <id>http://leee9.cn/</id>
   
   <author>
     <name>Lee</name>
@@ -17,9 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Start a Blog</title>
+    <link href="http://leee9.cn/2021/12/20/NEXT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/"/>
+    <id>http://leee9.cn/2021/12/20/NEXT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</id>
+    <published>2021-12-19T17:53:59.000Z</published>
+    <updated>2021-12-19T18:22:46.593Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.nesxc.com/post/hexo.html">hexo开始教程</a></p><p><a href="https://siriusq.top/Next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96?tdsourcetag=s_pctim_aiomsg">超级全的NEXT主题设置</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.nesxc.com/post/hexo.html&quot;&gt;hexo开始教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://siriusq.top/Next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96?</summary>
+      
+    
+    
+    
+    
+    <category term="guide" scheme="http://leee9.cn/tags/guide/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Welcome to My Blog</title>
-    <link href="http://example.com/2021/12/19/hello-world/"/>
-    <id>http://example.com/2021/12/19/hello-world/</id>
+    <link href="http://leee9.cn/2021/12/19/hello-world/"/>
+    <id>http://leee9.cn/2021/12/19/hello-world/</id>
     <published>2021-12-19T08:54:43.037Z</published>
     <updated>2021-12-19T14:40:41.424Z</updated>
     
@@ -36,8 +59,8 @@
   
   <entry>
     <title>装饰器 decorator</title>
-    <link href="http://example.com/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/"/>
-    <id>http://example.com/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/</id>
+    <link href="http://leee9.cn/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/"/>
+    <id>http://leee9.cn/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/</id>
     <published>2021-12-17T16:00:00.000Z</published>
     <updated>2021-12-19T15:08:33.001Z</updated>
     
@@ -48,10 +71,10 @@
     
     
     
-    <category term="python" scheme="http://example.com/categories/python/"/>
+    <category term="python" scheme="http://leee9.cn/categories/python/"/>
     
     
-    <category term="python" scheme="http://example.com/tags/python/"/>
+    <category term="python" scheme="http://leee9.cn/tags/python/"/>
     
   </entry>
   
