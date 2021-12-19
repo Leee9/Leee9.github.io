@@ -20,15 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="装饰器 decorator 不改变函数代码，且保持函数调用方法不变，增加新的功能（或给类增加属性和方法）  核心思想：用一个函数（或者类）去装饰一个旧函数（或者类），造出一个新函数（或者新类）  语法规则：在原有的函数上加@符，装饰器会把下面的函数或方法当作参数传递到装饰器中  应用场景：引入日志，函数执行时间统计，执行函数前的准备工作，执行函数后的处理工作，权限校验，缓存等   123@oute">
+<meta name="description" content="1.装饰器的原型与定义；2.统计函数执行时间；3.装饰器的嵌套；4.装饰带有参数的函数；5.带有参数的装饰器；6.类装饰器装饰函数；7.用类方法装饰函数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="‘装饰器 decorator&#39;">
+<meta property="og:title" content="装饰器 decorator">
 <meta property="og:url" content="http://example.com/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/index.html">
 <meta property="og:site_name" content="Lee&#39;s Blog">
-<meta property="og:description" content="装饰器 decorator 不改变函数代码，且保持函数调用方法不变，增加新的功能（或给类增加属性和方法）  核心思想：用一个函数（或者类）去装饰一个旧函数（或者类），造出一个新函数（或者新类）  语法规则：在原有的函数上加@符，装饰器会把下面的函数或方法当作参数传递到装饰器中  应用场景：引入日志，函数执行时间统计，执行函数前的准备工作，执行函数后的处理工作，权限校验，缓存等   123@oute">
+<meta property="og:description" content="1.装饰器的原型与定义；2.统计函数执行时间；3.装饰器的嵌套；4.装饰带有参数的函数；5.带有参数的装饰器；6.类装饰器装饰函数；7.用类方法装饰函数。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-17T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-19T13:53:56.066Z">
+<meta property="article:modified_time" content="2021-12-19T15:08:33.001Z">
 <meta property="article:author" content="Lee">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -38,10 +38,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/","path":"2021/12/18/装饰器 decorator/","title":"‘装饰器 decorator'"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/","path":"2021/12/18/装饰器 decorator/","title":"装饰器 decorator"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>‘装饰器 decorator' | Lee's Blog</title>
+<title>装饰器 decorator | Lee's Blog</title>
   
 
 
@@ -125,7 +125,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8-decorator"><span class="nav-number">1.</span> <span class="nav-text">装饰器 decorator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%A3%85%E9%A5%B0%E5%99%A8%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">1.装饰器原型与定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="nav-number">1.2.</span> <span class="nav-text">2.统计函数执行时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E5%B5%8C%E5%A5%97"><span class="nav-number">1.3.</span> <span class="nav-text">3.装饰器的嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%A3%85%E9%A5%B0%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">4.装饰带有参数的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-number">1.5.</span> <span class="nav-text">5.带有参数的装饰器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E7%B1%BB%E8%A3%85%E9%A5%B0%E5%99%A8%E8%A3%85%E9%A5%B0%E5%87%BD%E6%95%B0"><span class="nav-number">1.6.</span> <span class="nav-text">6.类装饰器装饰函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E7%94%A8%E7%B1%BB%E6%96%B9%E6%B3%95%E8%A3%85%E9%A5%B0%E5%87%BD%E6%95%B0"><span class="nav-number">1.7.</span> <span class="nav-text">7.用类方法装饰函数</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%A3%85%E9%A5%B0%E5%99%A8%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">1.装饰器原型与定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">2.统计函数执行时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E5%B5%8C%E5%A5%97"><span class="nav-number">3.</span> <span class="nav-text">3.装饰器的嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%A3%85%E9%A5%B0%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">4.装饰带有参数的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">5.带有参数的装饰器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E7%B1%BB%E8%A3%85%E9%A5%B0%E5%99%A8%E8%A3%85%E9%A5%B0%E5%87%BD%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">6.类装饰器装饰函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E7%94%A8%E7%B1%BB%E6%96%B9%E6%B3%95%E8%A3%85%E9%A5%B0%E5%87%BD%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">7.用类方法装饰函数</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ‘装饰器 decorator'
+          装饰器 decorator
         </h1>
 
         <div class="post-meta-container">
@@ -219,7 +219,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 21:53:56" itemprop="dateModified" datetime="2021-12-19T21:53:56+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-19 23:08:33" itemprop="dateModified" datetime="2021-12-19T23:08:33+08:00">2021-12-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -234,6 +234,7 @@
   
 </div>
 
+            <div class="post-description">1.装饰器的原型与定义；2.统计函数执行时间；3.装饰器的嵌套；4.装饰带有参数的函数；5.带有参数的装饰器；6.类装饰器装饰函数；7.用类方法装饰函数。</div>
         </div>
       </header>
 
@@ -241,7 +242,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="装饰器-decorator"><a href="#装饰器-decorator" class="headerlink" title="装饰器 decorator"></a>装饰器 decorator</h2><ul>
+        <p>装饰器</p>
+<ul>
 <li><p>不改变函数代码，且保持函数调用方法不变，增加新的功能（或给类增加属性和方法）</p>
 </li>
 <li><p>核心思想：用一个函数（或者类）去装饰一个旧函数（或者类），造出一个新函数（或者新类）</p>
@@ -256,7 +258,7 @@
 
 
 <h3 id="1-装饰器原型与定义"><a href="#1-装饰器原型与定义" class="headerlink" title="1.装饰器原型与定义"></a>1.装饰器原型与定义</h3><p>利用闭包，把函数当作参数传递，并且在函数内去调用传递进来的函数，并返回一个函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义外函数，接收一个函数作为参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span>(<span class="params">f</span>):</span></span><br><span class="line">	<span class="comment"># 定义内函数，并且在内函数中调用了外函数的参数</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">inner</span>():</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;我是外函数中的内函数1&quot;</span>)</span><br><span class="line">		f()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;我是外函数中的内函数2&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> inner</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义外函数，接收一个函数作为参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span>(<span class="params">f</span>):</span></span><br><span class="line">	<span class="comment"># 定义内函数，并且在内函数中调用了外函数的参数</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">inner</span>():</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;我是外函数中的内函数1&quot;</span>)</span><br><span class="line">		f()</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;我是外函数中的内函数2&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> inner</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义普通函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">old</span>:</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;我是普通函数&quot;</span>)</span><br><span class="line"><span class="comment"># old()直接调用  </span></span><br><span class="line">old = outer(old)<span class="comment"># outer函数返回了inner函数</span></span><br><span class="line">old() <span class="comment"># 此时再调用old等同于调用了inner函数</span></span><br></pre></td></tr></table></figure>
 

@@ -206,7 +206,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-12-19 16:54:43 / 修改时间：19:54:37" itemprop="dateCreated datePublished" datetime="2021-12-19T16:54:43+08:00">2021-12-19</time>
+      <time title="创建时间：2021-12-19 16:54:43 / 修改时间：22:40:41" itemprop="dateCreated datePublished" datetime="2021-12-19T16:54:43+08:00">2021-12-19</time>
     </span>
 
   
@@ -221,19 +221,14 @@
     <div class="post-body" itemprop="articleBody">
           <p>Starting now!</p>
 <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/12/19/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -272,7 +267,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/" class="post-title-link" itemprop="url">‘装饰器 decorator'</a>
+          <a href="/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/" class="post-title-link" itemprop="url">装饰器 decorator</a>
         </h2>
 
         <div class="post-meta-container">
@@ -290,7 +285,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-12-19 21:53:56" itemprop="dateModified" datetime="2021-12-19T21:53:56+08:00">2021-12-19</time>
+      <time title="修改时间：2021-12-19 23:08:33" itemprop="dateModified" datetime="2021-12-19T23:08:33+08:00">2021-12-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -312,63 +307,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="装饰器-decorator"><a href="#装饰器-decorator" class="headerlink" title="装饰器 decorator"></a>装饰器 decorator</h2><ul>
-<li><p>不改变函数代码，且保持函数调用方法不变，增加新的功能（或给类增加属性和方法）</p>
-</li>
-<li><p>核心思想：用一个函数（或者类）去装饰一个旧函数（或者类），造出一个新函数（或者新类）</p>
-</li>
-<li><p>语法规则：在原有的函数上加@符，装饰器会把下面的函数或方法当作参数传递到装饰器中</p>
-</li>
-<li><p>应用场景：引入日志，函数执行时间统计，执行函数前的准备工作，执行函数后的处理工作，权限校验，缓存等</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@outer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="1-装饰器原型与定义"><a href="#1-装饰器原型与定义" class="headerlink" title="1.装饰器原型与定义"></a>1.装饰器原型与定义</h3><p>利用闭包，把函数当作参数传递，并且在函数内去调用传递进来的函数，并返回一个函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义外函数，接收一个函数作为参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span>(<span class="params">f</span>):</span></span><br><span class="line">	<span class="comment"># 定义内函数，并且在内函数中调用了外函数的参数</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">inner</span>():</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;我是外函数中的内函数1&quot;</span>)</span><br><span class="line">		f()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;我是外函数中的内函数2&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> inner</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义普通函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">old</span>:</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;我是普通函数&quot;</span>)</span><br><span class="line"><span class="comment"># old()直接调用  </span></span><br><span class="line">old = outer(old)<span class="comment"># outer函数返回了inner函数</span></span><br><span class="line">old() <span class="comment"># 此时再调用old等同于调用了inner函数</span></span><br></pre></td></tr></table></figure>
-
-<p>装饰器用法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 改为装饰器用法</span></span><br><span class="line"><span class="meta">@outer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">old</span>():</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;我是一个普通函数&quot;</span>)</span><br><span class="line">old()</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-统计函数执行时间"><a href="#2-统计函数执行时间" class="headerlink" title="2.统计函数执行时间"></a>2.统计函数执行时间</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">inport time</span><br><span class="line"><span class="comment"># 定义一个统计函数执行时间的装饰器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">runtime</span>(<span class="params">f</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span>():</span></span><br><span class="line">        start = time.pref_counter()</span><br><span class="line">        f()</span><br><span class="line">        end = time.perf_counter()-start</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;函数执行时间为:<span class="subst">&#123;end&#125;</span>&#x27;</span>)</span><br><span class="line">	<span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="meta">@runtime</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">        <span class="built_in">print</span>(i,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3-装饰器的嵌套"><a href="#3-装饰器的嵌套" class="headerlink" title="3.装饰器的嵌套"></a>3.装饰器的嵌套</h3><ul>
-<li>普通装饰器</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span>(<span class="params">f</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;内函数1&quot;</span>)</span><br><span class="line">        f()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;内函数2&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="meta">@outer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;普通函数&quot;</span>)</span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>再定义一个装饰器</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 装饰器1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span>(<span class="params">f</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;内函数1&quot;</span>)</span><br><span class="line">        f()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;内函数2&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kuozhan</span>(<span class="params">f</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">kzinner</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;扩展1&quot;</span>)</span><br><span class="line">        f()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;扩展2&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> kzinner</span><br><span class="line"></span><br><span class="line"><span class="meta">@kuozhan</span></span><br><span class="line"><span class="meta">@outer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;普通函数&quot;</span>)</span><br><span class="line"></span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="4-装饰带有参数的函数"><a href="#4-装饰带有参数的函数" class="headerlink" title="4.装饰带有参数的函数"></a>4.装饰带有参数的函数</h3><p>在inner函数中添加参数即可</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span>(<span class="params">f</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span>(<span class="params">arg</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;内函数1&quot;</span>)</span><br><span class="line">        f(arg)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;内函数2&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="meta">@outer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">arg</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;普通函数<span class="subst">&#123;arg&#125;</span>&quot;</span>)</span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
-
-<p>装饰带有<strong>多参数</strong>的函数也是一样的道理</p>
-<h3 id="5-带有参数的装饰器"><a href="#5-带有参数的装饰器" class="headerlink" title="5.带有参数的装饰器"></a>5.带有参数的装饰器</h3><p>用于流程控制</p>
-<p>给当前的装饰器套一个壳，用于接收装饰器的参数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kuozhan</span>(<span class="params">var</span>)   </span></span><br><span class="line"><span class="function">    <span class="title">def</span> <span class="title">outer</span>(<span class="params">f</span>):</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">inner1</span>:</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;inner1&quot;</span>)</span><br><span class="line">            f()</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">inner2</span>():</span>   </span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;inner2&quot;</span>)</span><br><span class="line">            f()</span><br><span class="line">        <span class="keyword">if</span> var == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> inner1</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> inner2</span><br><span class="line">	<span class="keyword">return</span> outer</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本来是outer的参数，用壳接收参数</span></span><br><span class="line"><span class="meta">@kuozhan(<span class="params"><span class="number">1</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;普通函数&quot;</span>)</span><br><span class="line">func()	</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="6-类装饰器装饰函数"><a href="#6-类装饰器装饰函数" class="headerlink" title="6.类装饰器装饰函数"></a>6.类装饰器装饰函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span>():</span></span><br><span class="line">    <span class="comment"># 魔术方法，当把该类的对象当函数调用时，自动触发</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self, f</span>):</span></span><br><span class="line">        self.f = f</span><br><span class="line">        <span class="keyword">return</span> self.inner</span><br><span class="line">	</span><br><span class="line">    <span class="comment"># 在定义的需要返回的新方法中，进行装饰和处理</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span>(<span class="params">self, arg</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">        self.f(arg)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;2&#x27;</span>)</span><br><span class="line">        </span><br><span class="line"><span class="meta">@Outer() </span><span class="comment"># 实例化对象obj  @obj ==&gt; obj(func) ==&gt; 执行__call__(func)方法 ==&gt; 返回inner()调用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">arg</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;普通函数&quot;</span>,arg)</span><br><span class="line">func(<span class="string">&#x27;a&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="7-用类方法装饰函数"><a href="#7-用类方法装饰函数" class="headerlink" title="7.用类方法装饰函数"></a>7.用类方法装饰函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">newinner</span>(<span class="params">f</span>):</span></span><br><span class="line">        Outer.f = f <span class="comment"># 把传递进来的函数定义为类方法</span></span><br><span class="line">        <span class="keyword">return</span> Outer.inner <span class="comment"># 返回一个新的类方法</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span>():</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">        Outer.f()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;2&#x27;</span>)</span><br><span class="line">        </span><br><span class="line"><span class="meta">@Outer.newinner </span><span class="comment"># Outer.newinner(func) ==&gt; Outer.inner</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
+          <p>1.装饰器的原型与定义；2.统计函数执行时间；3.装饰器的嵌套；4.装饰带有参数的函数；5.带有参数的装饰器；6.类装饰器装饰函数；7.用类方法装饰函数。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/12/18/%E8%A3%85%E9%A5%B0%E5%99%A8%20decorator/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
